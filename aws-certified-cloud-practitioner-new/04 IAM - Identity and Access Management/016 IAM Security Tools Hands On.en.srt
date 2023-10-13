@@ -1,0 +1,259 @@
+1
+00:00:00,070 --> 00:00:02,390
+<v Lecturer>Let's generate a credential report.</v>
+
+2
+00:00:02,390 --> 00:00:03,360
+So, on the bottom left,
+
+3
+00:00:03,360 --> 00:00:05,160
+I am going to create a credential report.
+
+4
+00:00:05,160 --> 00:00:06,580
+And I can click on Download Report
+
+5
+00:00:06,580 --> 00:00:10,980
+to just download this report and this will be a CSV file.
+
+6
+00:00:10,980 --> 00:00:13,470
+Now, this CSV, because I'm using a training account
+
+7
+00:00:13,470 --> 00:00:14,850
+is not fascinating.
+
+8
+00:00:14,850 --> 00:00:17,460
+But as we can see, we have two rows in it.
+
+9
+00:00:17,460 --> 00:00:20,700
+We have my root account, and my account named stephane.
+
+10
+00:00:20,700 --> 00:00:23,150
+We can see when the user was created,
+
+11
+00:00:23,150 --> 00:00:25,750
+if the password was enabled,
+
+12
+00:00:25,750 --> 00:00:28,930
+When the password was last used, and last changed.
+
+13
+00:00:28,930 --> 00:00:30,940
+When is the next rotation to be expected
+
+14
+00:00:30,940 --> 00:00:33,370
+if we do enable password rotation.
+
+15
+00:00:33,370 --> 00:00:34,580
+Is mfa active?
+
+16
+00:00:34,580 --> 00:00:36,980
+So we can see it's active for my root account,
+
+17
+00:00:36,980 --> 00:00:39,680
+but it is not active for my stephane account.
+
+18
+00:00:39,680 --> 00:00:42,210
+Then access keys, are they generated or not?
+
+19
+00:00:42,210 --> 00:00:44,150
+Yes, they are created for my stephane account,
+
+20
+00:00:44,150 --> 00:00:45,570
+but not for my root account.
+
+21
+00:00:45,570 --> 00:00:49,400
+And when were they last rotated, last used, and so on.
+
+22
+00:00:49,400 --> 00:00:52,100
+You can get more information about other access keys
+
+23
+00:00:52,100 --> 00:00:53,800
+and certificates and so on.
+
+24
+00:00:53,800 --> 00:00:55,440
+So this report is extremely helpful
+
+25
+00:00:55,440 --> 00:00:57,370
+if you want to look at some users
+
+26
+00:00:57,370 --> 00:00:58,810
+that haven't been changing their password,
+
+27
+00:00:58,810 --> 00:01:00,390
+or using it or their account.
+
+28
+00:01:00,390 --> 00:01:03,187
+It could be giving you a great way to find which users
+
+29
+00:01:03,187 --> 00:01:06,790
+that deserve your attention from a security standpoint.
+
+30
+00:01:06,790 --> 00:01:09,310
+Next, I want to look at IAM Access Advisors,
+
+31
+00:01:09,310 --> 00:01:11,200
+so I'm going to click on my user.
+
+32
+00:01:11,200 --> 00:01:12,680
+My user is stephane,
+
+33
+00:01:12,680 --> 00:01:16,070
+and the right hand side it says Access Advisor.
+
+34
+00:01:16,070 --> 00:01:17,480
+So this is going to show me
+
+35
+00:01:17,480 --> 00:01:19,790
+when some services were last used.
+
+36
+00:01:19,790 --> 00:01:22,700
+And the recent activity usually appears within four hours.
+
+37
+00:01:22,700 --> 00:01:25,050
+So if you don't see all the data, that's why.
+
+38
+00:01:25,050 --> 00:01:27,400
+So we can see that, for example,
+
+39
+00:01:27,400 --> 00:01:31,470
+Identity and Access Management was last accessed today.
+
+40
+00:01:31,470 --> 00:01:33,830
+Thanks to this policy right here.
+
+41
+00:01:33,830 --> 00:01:35,709
+And also the Health APIs and Notifications
+
+42
+00:01:35,709 --> 00:01:37,340
+were accessed today.
+
+43
+00:01:37,340 --> 00:01:38,417
+Why?
+
+44
+00:01:38,417 --> 00:01:39,250
+Well this is a little bell right here,
+
+45
+00:01:39,250 --> 00:01:40,430
+automatically will be accessed
+
+46
+00:01:40,430 --> 00:01:42,560
+to see if there are any notifications for your accounts.
+
+47
+00:01:42,560 --> 00:01:43,450
+And we'll see what this is,
+
+48
+00:01:43,450 --> 00:01:45,770
+this is the Personal Health Dashboard, okay.
+
+49
+00:01:45,770 --> 00:01:47,458
+But for the other services, for example,
+
+50
+00:01:47,458 --> 00:01:50,880
+Alexa for Business, or AWS Accounts,
+
+51
+00:01:50,880 --> 00:01:54,180
+or Certificates Manager, I haven't been using them.
+
+52
+00:01:54,180 --> 00:01:56,130
+And so maybe it makes sense for me
+
+53
+00:01:56,130 --> 00:01:59,130
+to remove these permissions from this user,
+
+54
+00:01:59,130 --> 00:02:03,000
+because it seems this user is not using these services.
+
+55
+00:02:03,000 --> 00:02:05,510
+So this is the whole power of Access Advisor.
+
+56
+00:02:05,510 --> 00:02:08,120
+And as you can see there are lots of services in AWS.
+
+57
+00:02:08,120 --> 00:02:10,560
+About 23 pages just like this,
+
+58
+00:02:10,560 --> 00:02:13,580
+so this is about 230 services in AWS
+
+59
+00:02:13,580 --> 00:02:15,000
+at the time of recording.
+
+60
+00:02:15,000 --> 00:02:17,060
+So quite a lot to learn, but don't worry,
+
+61
+00:02:17,060 --> 00:02:18,170
+we'll get to cover it.
+
+62
+00:02:18,170 --> 00:02:19,970
+And we've just seen all the ways
+
+63
+00:02:19,970 --> 00:02:22,430
+we can have security tools on IAM.
+
+64
+00:02:22,430 --> 00:02:23,390
+I hope you like this lecture,
+
+65
+00:02:23,390 --> 00:02:25,340
+and I will see you in the next lecture.

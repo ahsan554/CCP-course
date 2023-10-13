@@ -1,0 +1,728 @@
+1
+00:00:00,030 --> 00:00:02,970
+<v Instructor>Okay, so let's explore the IAM console.</v>
+
+2
+00:00:02,970 --> 00:00:04,290
+For this, I just type IAM
+
+3
+00:00:04,290 --> 00:00:07,770
+and I go straight into the IAM console.
+
+4
+00:00:07,770 --> 00:00:10,920
+So this is where we're going to be managing our account.
+
+5
+00:00:10,920 --> 00:00:12,030
+And as you can see
+
+6
+00:00:12,030 --> 00:00:14,970
+from the top right corner, it says Global.
+
+7
+00:00:14,970 --> 00:00:17,790
+That means that this does not require a region selection
+
+8
+00:00:17,790 --> 00:00:20,370
+and IAM is a global service.
+
+9
+00:00:20,370 --> 00:00:21,660
+So no matter where you are,
+
+10
+00:00:21,660 --> 00:00:23,880
+you will have the same users across all your regions.
+
+11
+00:00:23,880 --> 00:00:25,080
+That makes sense.
+
+12
+00:00:25,080 --> 00:00:26,850
+Next, what we're going to do is to go ahead
+
+13
+00:00:26,850 --> 00:00:28,800
+and create our first users.
+
+14
+00:00:28,800 --> 00:00:31,290
+So you can disregard any of these messages right now.
+
+15
+00:00:31,290 --> 00:00:32,730
+Don't worry about them.
+
+16
+00:00:32,730 --> 00:00:35,250
+And we go under Users and on user,
+
+17
+00:00:35,250 --> 00:00:37,320
+we're going to add a user.
+
+18
+00:00:37,320 --> 00:00:38,820
+So why do we need users?
+
+19
+00:00:38,820 --> 00:00:40,710
+Well, that's because we're using the root account.
+
+20
+00:00:40,710 --> 00:00:42,570
+If I go on the top right, as you can see,
+
+21
+00:00:42,570 --> 00:00:44,070
+it just gives me my account ID.
+
+22
+00:00:44,070 --> 00:00:45,870
+So that means I'm using the root account
+
+23
+00:00:45,870 --> 00:00:47,610
+and it has too much permissions.
+
+24
+00:00:47,610 --> 00:00:50,460
+And so what I want to do is instead to create admin users
+
+25
+00:00:50,460 --> 00:00:54,240
+and regular users and use them within AWS.
+
+26
+00:00:54,240 --> 00:00:55,683
+So let's go and create our first user.
+
+27
+00:00:55,683 --> 00:00:57,930
+It's going to be named Stephane,
+
+28
+00:00:57,930 --> 00:00:59,910
+and I want to provide myself access
+
+29
+00:00:59,910 --> 00:01:01,620
+to the management console.
+
+30
+00:01:01,620 --> 00:01:03,630
+As you can see right now, there's an option says,
+
+31
+00:01:03,630 --> 00:01:05,310
+Hey, do you want to use a user
+
+32
+00:01:05,310 --> 00:01:06,240
+in Identity Center?
+
+33
+00:01:06,240 --> 00:01:07,710
+That's the recommended way,
+
+34
+00:01:07,710 --> 00:01:09,978
+or do you want to create an IAM user?
+
+35
+00:01:09,978 --> 00:01:12,780
+I'm going to go against the recommendations of AWS
+
+36
+00:01:12,780 --> 00:01:14,550
+because right now, from an exam perspective,
+
+37
+00:01:14,550 --> 00:01:16,320
+you need to know about IAM users
+
+38
+00:01:16,320 --> 00:01:19,290
+and the Identity Center is a bit more complicated to set up.
+
+39
+00:01:19,290 --> 00:01:21,420
+But don't worry, this does not affect your course
+
+40
+00:01:21,420 --> 00:01:23,730
+and you will learn everything you need to know for the exam.
+
+41
+00:01:23,730 --> 00:01:25,140
+So please bear with me
+
+42
+00:01:25,140 --> 00:01:28,110
+and follow along by creating an IAM user.
+
+43
+00:01:28,110 --> 00:01:28,980
+So you scroll down
+
+44
+00:01:28,980 --> 00:01:31,560
+and then you have to have a console password.
+
+45
+00:01:31,560 --> 00:01:33,330
+Now, if this was for someone else,
+
+46
+00:01:33,330 --> 00:01:34,980
+I would use an auto-generated password
+
+47
+00:01:34,980 --> 00:01:35,850
+but because this is for me,
+
+48
+00:01:35,850 --> 00:01:39,780
+I can just enter a password that I know of.
+
+49
+00:01:39,780 --> 00:01:41,880
+And you need to make sure that you are complaint
+
+50
+00:01:41,880 --> 00:01:44,010
+with the rules of the password right here.
+
+51
+00:01:44,010 --> 00:01:46,290
+Then I can disable this box
+
+52
+00:01:46,290 --> 00:01:48,180
+because I don't need to create a new password at sign in.
+
+53
+00:01:48,180 --> 00:01:49,260
+But I would do this
+
+54
+00:01:49,260 --> 00:01:52,110
+if it was another user I'm creating an account for.
+
+55
+00:01:52,110 --> 00:01:53,260
+Then you click on Next.
+
+56
+00:01:54,420 --> 00:01:56,400
+Okay, so next, we need to add a user
+
+57
+00:01:56,400 --> 00:01:59,730
+to group or attach permissions to it directly.
+
+58
+00:01:59,730 --> 00:02:02,070
+But we're going to create groups because it's much easier.
+
+59
+00:02:02,070 --> 00:02:03,360
+So let's create a group.
+
+60
+00:02:03,360 --> 00:02:05,730
+And this group name is going to be admin.
+
+61
+00:02:05,730 --> 00:02:08,880
+And the admin group is going to have one policy attached
+
+62
+00:02:08,880 --> 00:02:10,980
+called AdministratorAccess.
+
+63
+00:02:10,980 --> 00:02:13,680
+So you take this one, you scroll all the way down
+
+64
+00:02:13,680 --> 00:02:16,050
+and you click on Create user group.
+
+65
+00:02:16,050 --> 00:02:18,840
+So now the user can be added to the group admin
+
+66
+00:02:18,840 --> 00:02:20,730
+and because we will be in this admin group,
+
+67
+00:02:20,730 --> 00:02:23,070
+we will inherit the policies of that group,
+
+68
+00:02:23,070 --> 00:02:25,950
+which is AdministratorAccess.
+
+69
+00:02:25,950 --> 00:02:28,920
+Click on Next. Here we can review and create the user.
+
+70
+00:02:28,920 --> 00:02:30,990
+As you can see, you have optional tags.
+
+71
+00:02:30,990 --> 00:02:33,270
+Tags are everywhere in AWS.
+
+72
+00:02:33,270 --> 00:02:36,690
+They can help to include some extra information
+
+73
+00:02:36,690 --> 00:02:37,523
+about your data
+
+74
+00:02:37,523 --> 00:02:40,290
+but they don't impact how your account is functioning.
+
+75
+00:02:40,290 --> 00:02:42,360
+For example, I could enter a tag
+
+76
+00:02:42,360 --> 00:02:46,500
+and say that the department of Stephane is engineering.
+
+77
+00:02:46,500 --> 00:02:48,420
+This is the kind of usage for tags, but again,
+
+78
+00:02:48,420 --> 00:02:51,840
+it's just information you can add for users, for groups
+
+79
+00:02:51,840 --> 00:02:54,243
+and pretty much any resources within AWS.
+
+80
+00:02:55,307 --> 00:02:56,790
+So I will just show you how to do it once
+
+81
+00:02:56,790 --> 00:02:58,920
+but I won't do it everywhere.
+
+82
+00:02:58,920 --> 00:03:00,840
+Okay, so let's create this user.
+
+83
+00:03:00,840 --> 00:03:04,410
+Now, the user is successfully created, and what I can do
+
+84
+00:03:04,410 --> 00:03:07,050
+is that I can email the sign in instruction.
+
+85
+00:03:07,050 --> 00:03:09,360
+I can download the CSV to have the username
+
+86
+00:03:09,360 --> 00:03:11,250
+and the password, or I can click here
+
+87
+00:03:11,250 --> 00:03:13,680
+and return to the user list.
+
+88
+00:03:13,680 --> 00:03:15,660
+And now let's explore what we have created.
+
+89
+00:03:15,660 --> 00:03:19,410
+So under user groups, I will find the group admin
+
+90
+00:03:19,410 --> 00:03:21,870
+and if I click on it, I can see that there's one user
+
+91
+00:03:21,870 --> 00:03:24,300
+in this group, which is the Stephane user.
+
+92
+00:03:24,300 --> 00:03:26,940
+And if I look at the group permissions, as we can see,
+
+93
+00:03:26,940 --> 00:03:28,590
+there's a policy name attached to the group,
+
+94
+00:03:28,590 --> 00:03:30,450
+which is the administrator access,
+
+95
+00:03:30,450 --> 00:03:32,070
+which provides full admin access
+
+96
+00:03:32,070 --> 00:03:33,930
+to any users within the group.
+
+97
+00:03:33,930 --> 00:03:37,410
+And so if we go and click on the user, Stephane,
+
+98
+00:03:37,410 --> 00:03:40,450
+so this is a user you can also get back from this menu
+
+99
+00:03:40,450 --> 00:03:43,350
+on the left-hand side and just click on user Stephane.
+
+100
+00:03:43,350 --> 00:03:46,470
+Okay, so if you click on the user, Stephane, back to it.
+
+101
+00:03:46,470 --> 00:03:47,640
+Okay, great.
+
+102
+00:03:47,640 --> 00:03:50,700
+We have these permissions, and the permissions associated
+
+103
+00:03:50,700 --> 00:03:53,142
+with my user is AdministratorAccess
+
+104
+00:03:53,142 --> 00:03:55,500
+and this is a managed policy that we inherited
+
+105
+00:03:55,500 --> 00:03:57,090
+from the group admin.
+
+106
+00:03:57,090 --> 00:04:00,880
+Okay, so we have our users and we have our groups
+
+107
+00:04:01,920 --> 00:04:03,750
+and now we're going to see how to log in
+
+108
+00:04:03,750 --> 00:04:05,640
+with that user Stephane.
+
+109
+00:04:05,640 --> 00:04:08,190
+So to do so, let's go back into the dashboard.
+
+110
+00:04:08,190 --> 00:04:09,630
+And on the right-hand side of the dashboard,
+
+111
+00:04:09,630 --> 00:04:11,910
+we have some summary about our AWS account.
+
+112
+00:04:11,910 --> 00:04:13,590
+So the account ID is right here,
+
+113
+00:04:13,590 --> 00:04:15,600
+which you can also get by opening this panel.
+
+114
+00:04:15,600 --> 00:04:19,140
+So this is the same account ID here and here,
+
+115
+00:04:19,140 --> 00:04:22,920
+and the account alias is what you can set to log in
+
+116
+00:04:22,920 --> 00:04:23,790
+to your account faster
+
+117
+00:04:23,790 --> 00:04:26,520
+because remembering numbers sometimes is difficult.
+
+118
+00:04:26,520 --> 00:04:28,410
+So you can create an account alias
+
+119
+00:04:28,410 --> 00:04:30,330
+and you just have to specify an alias that you like.
+
+120
+00:04:30,330 --> 00:04:34,230
+For example, stephane-aws--v2, and click on Save Changes.
+
+121
+00:04:34,230 --> 00:04:36,450
+Now, this is a unique alias for my account.
+
+122
+00:04:36,450 --> 00:04:39,960
+You're not gonna be able to use this alias for your account,
+
+123
+00:04:39,960 --> 00:04:41,460
+but you can create your own.
+
+124
+00:04:41,460 --> 00:04:43,530
+And now we have a sign in URL
+
+125
+00:04:43,530 --> 00:04:46,710
+on the right-hand side that is customized for my alias.
+
+126
+00:04:46,710 --> 00:04:49,440
+So if I click on copy this URL,
+
+127
+00:04:49,440 --> 00:04:51,060
+I need to open it in a new tab,
+
+128
+00:04:51,060 --> 00:04:55,470
+but it must be an incognito tab or a different web browser.
+
+129
+00:04:55,470 --> 00:04:58,170
+So here I've opened a private window in Firefox,
+
+130
+00:04:58,170 --> 00:05:00,030
+which is going to be a different session.
+
+131
+00:05:00,030 --> 00:05:02,010
+And so therefore, I can copy you the sign in URL
+
+132
+00:05:02,010 --> 00:05:04,530
+and paste it here and press enter.
+
+133
+00:05:04,530 --> 00:05:08,040
+Now we are taken again to the login page of AWS
+
+134
+00:05:08,040 --> 00:05:10,800
+and as we can see, we have three fields in a row.
+
+135
+00:05:10,800 --> 00:05:15,480
+We have the account ID, the IAM username, and the password.
+
+136
+00:05:15,480 --> 00:05:19,560
+So what's happening here is that we, using this URL,
+
+137
+00:05:19,560 --> 00:05:22,590
+are taken to a sign in page as an IAM user.
+
+138
+00:05:22,590 --> 00:05:23,460
+And how do we know this?
+
+139
+00:05:23,460 --> 00:05:25,620
+How can we get back to this page if you wanted to?
+
+140
+00:05:25,620 --> 00:05:26,850
+Well, when we went into the sign in,
+
+141
+00:05:26,850 --> 00:05:28,560
+we had two options, either root user
+
+142
+00:05:28,560 --> 00:05:31,800
+which will log you in as a root user or IAM user
+
+143
+00:05:31,800 --> 00:05:34,470
+in which case, you just need to enter the account ID
+
+144
+00:05:34,470 --> 00:05:35,820
+or the account alias.
+
+145
+00:05:35,820 --> 00:05:37,080
+And then click on Next,
+
+146
+00:05:37,080 --> 00:05:39,480
+which will take you into the page we had from before,
+
+147
+00:05:39,480 --> 00:05:42,663
+which was this page right here.
+
+148
+00:05:43,830 --> 00:05:44,663
+So now in this page,
+
+149
+00:05:44,663 --> 00:05:46,770
+what I need to do is to enter my IAM username
+
+150
+00:05:46,770 --> 00:05:49,080
+and the password that I just created,
+
+151
+00:05:49,080 --> 00:05:50,613
+and then click on sign in.
+
+152
+00:05:51,540 --> 00:05:55,170
+And we are now logged in as an IAM user in the console.
+
+153
+00:05:55,170 --> 00:05:56,370
+So how do we know this?
+
+154
+00:05:56,370 --> 00:05:58,590
+Well, if you're logged in as a root user, as you can see
+
+155
+00:05:58,590 --> 00:05:59,580
+when you click on the account
+
+156
+00:05:59,580 --> 00:06:01,260
+it says My account and the account number.
+
+157
+00:06:01,260 --> 00:06:02,580
+This is a root user.
+
+158
+00:06:02,580 --> 00:06:04,260
+But if we go on the right-hand side, we can see
+
+159
+00:06:04,260 --> 00:06:07,530
+that there is Stephane@ and then the account alias.
+
+160
+00:06:07,530 --> 00:06:09,180
+And so what we can see is that Stephane
+
+161
+00:06:09,180 --> 00:06:10,920
+is the IAM user Stephane,
+
+162
+00:06:10,920 --> 00:06:13,440
+and then we're at my accounts and the account number.
+
+163
+00:06:13,440 --> 00:06:14,460
+So we know on the right-hand side
+
+164
+00:06:14,460 --> 00:06:16,320
+that we're logged in as an IAM user.
+
+165
+00:06:16,320 --> 00:06:18,249
+Now, this IAM user can do pretty much anything
+
+166
+00:06:18,249 --> 00:06:20,910
+that the other user was able to do, the root user
+
+167
+00:06:20,910 --> 00:06:22,469
+because they're both admins, okay?
+
+168
+00:06:22,469 --> 00:06:25,080
+But from a course perspective, it's better
+
+169
+00:06:25,080 --> 00:06:28,500
+if you use an IAM user than using the root account.
+
+170
+00:06:28,500 --> 00:06:30,600
+Now, you will see in some videos, I have the root user,
+
+171
+00:06:30,600 --> 00:06:32,250
+in some videos, I have the IAM user.
+
+172
+00:06:32,250 --> 00:06:34,350
+It doesn't really matter from a course perspective, okay?
+
+173
+00:06:34,350 --> 00:06:37,350
+So I will use them as I please.
+
+174
+00:06:37,350 --> 00:06:41,460
+But if I need to use the root user specifically,
+
+175
+00:06:41,460 --> 00:06:42,420
+I will let you know.
+
+176
+00:06:42,420 --> 00:06:44,310
+Or if I need to use an IAM user specifically,
+
+177
+00:06:44,310 --> 00:06:45,900
+I will let you know as well, okay?
+
+178
+00:06:45,900 --> 00:06:47,520
+But just so you know, to keep on going this section,
+
+179
+00:06:47,520 --> 00:06:49,080
+please have the root account,
+
+180
+00:06:49,080 --> 00:06:52,110
+as well as your IAM user ready and available.
+
+181
+00:06:52,110 --> 00:06:53,040
+So that's it for this lecture.
+
+182
+00:06:53,040 --> 00:06:56,040
+I hope you liked it, and I will see you in the next lecture.
+

@@ -1,0 +1,391 @@
+1
+00:00:00,330 --> 00:00:02,330
+<v Instructor>Now that we have created users and groups,</v>
+
+2
+00:00:02,330 --> 00:00:04,970
+it is time for us to protect these users and groups
+
+3
+00:00:04,970 --> 00:00:06,490
+from being compromised.
+
+4
+00:00:06,490 --> 00:00:09,650
+So for this we can have two defense mechanisms.
+
+5
+00:00:09,650 --> 00:00:12,860
+The first one is to define what's called a Password Policy.
+
+6
+00:00:12,860 --> 00:00:13,693
+Why?
+
+7
+00:00:13,693 --> 00:00:15,470
+Well, because the stronger the password you use
+
+8
+00:00:15,470 --> 00:00:17,640
+the more security for your accounts.
+
+9
+00:00:17,640 --> 00:00:20,450
+So in AWS, you can set up a password policy
+
+10
+00:00:20,450 --> 00:00:22,260
+with different options.
+
+11
+00:00:22,260 --> 00:00:25,540
+The first one is you can set a minimum password length,
+
+12
+00:00:25,540 --> 00:00:28,240
+and you can require specific character types,
+
+13
+00:00:28,240 --> 00:00:30,990
+for example, you may want to have an uppercase letter,
+
+14
+00:00:30,990 --> 00:00:34,670
+lowercase letter, number, non-alphanumeric characters,
+
+15
+00:00:34,670 --> 00:00:37,280
+for example a question mark and so on.
+
+16
+00:00:37,280 --> 00:00:39,360
+Then you can allow or not, IAM users
+
+17
+00:00:39,360 --> 00:00:41,380
+to change their own passwords
+
+18
+00:00:41,380 --> 00:00:43,370
+or you can require users to change their password,
+
+19
+00:00:43,370 --> 00:00:46,000
+after some time, to make your password expired, for example,
+
+20
+00:00:46,000 --> 00:00:50,040
+to say every 90 days, users have to change their passwords.
+
+21
+00:00:50,040 --> 00:00:52,900
+Finally, you can also prevent password reuse
+
+22
+00:00:52,900 --> 00:00:54,810
+so that users when they change their passwords,
+
+23
+00:00:54,810 --> 00:00:57,120
+don't change it to the one they already have
+
+24
+00:00:57,120 --> 00:00:59,490
+or change it to the one they had before.
+
+25
+00:00:59,490 --> 00:01:02,650
+So this is great, a password policy, really is helpful,
+
+26
+00:01:02,650 --> 00:01:05,310
+against brute force attacks on your accounts.
+
+27
+00:01:05,310 --> 00:01:07,630
+But there's a second defense mechanism
+
+28
+00:01:07,630 --> 00:01:09,970
+that you need to know, going into the exam,
+
+29
+00:01:09,970 --> 00:01:13,600
+and this is the Multi Factor Authentication or MFA.
+
+30
+00:01:13,600 --> 00:01:16,250
+It is possible you already to use it, on some websites,
+
+31
+00:01:16,250 --> 00:01:20,500
+but on AWS it's a must and it's very recommended to use it.
+
+32
+00:01:20,500 --> 00:01:23,790
+So, users have access to your account,
+
+33
+00:01:23,790 --> 00:01:25,910
+and they can possibly do a lot of things,
+
+34
+00:01:25,910 --> 00:01:27,920
+especially if they're, administrators,
+
+35
+00:01:27,920 --> 00:01:31,050
+they can change configuration, delete resources
+
+36
+00:01:31,050 --> 00:01:32,250
+and other things.
+
+37
+00:01:32,250 --> 00:01:35,620
+So you absolutely want to protect at least
+
+38
+00:01:35,620 --> 00:01:39,900
+your Root Accounts and hopefully all your IAM users.
+
+39
+00:01:39,900 --> 00:01:42,380
+So how do you protect them on top of the password?
+
+40
+00:01:42,380 --> 00:01:44,560
+Well, you use an MFA device.
+
+41
+00:01:44,560 --> 00:01:46,060
+So what is MFA?
+
+42
+00:01:46,060 --> 00:01:50,920
+MFA is using the combination of a password that you know,
+
+43
+00:01:50,920 --> 00:01:53,830
+and a security device that you own,
+
+44
+00:01:53,830 --> 00:01:55,660
+and these two things together,
+
+45
+00:01:55,660 --> 00:01:58,510
+have a much greater security than just a password.
+
+46
+00:01:58,510 --> 00:02:00,450
+So for example, let us take Alice.
+
+47
+00:02:00,450 --> 00:02:02,450
+Alice knows her password,
+
+48
+00:02:02,450 --> 00:02:05,910
+but she also has an MFA generating token,
+
+49
+00:02:05,910 --> 00:02:09,050
+and by using these things together while logging in,
+
+50
+00:02:09,050 --> 00:02:12,660
+she is going to be able to do a successful login on MFA.
+
+51
+00:02:12,660 --> 00:02:15,840
+So the benefit of MFA is that even if Alice
+
+52
+00:02:15,840 --> 00:02:19,400
+has lost her password, because it's stolen or it's hacked,
+
+53
+00:02:19,400 --> 00:02:22,360
+the account will not be compromised because the hacker,
+
+54
+00:02:22,360 --> 00:02:25,370
+will need to also get a hold of the physical device
+
+55
+00:02:25,370 --> 00:02:29,140
+of Alice that could be a phone for example to do a login.
+
+56
+00:02:29,140 --> 00:02:31,890
+Obviously, that is much less likely.
+
+57
+00:02:31,890 --> 00:02:35,430
+So what are the MFA devices option in AWS
+
+58
+00:02:35,430 --> 00:02:37,330
+and you should know them going to the exam
+
+59
+00:02:37,330 --> 00:02:39,560
+but don't worry they're quite simple.
+
+60
+00:02:39,560 --> 00:02:41,780
+The first one is a Virtual MFA device,
+
+61
+00:02:41,780 --> 00:02:43,720
+this is what we'll be using in the hands on
+
+62
+00:02:43,720 --> 00:02:46,825
+and so you can use Google Authenticator,
+
+63
+00:02:46,825 --> 00:02:48,650
+which is just working on one phone at a time,
+
+64
+00:02:48,650 --> 00:02:50,980
+or using Authy which is multi-device
+
+65
+00:02:50,980 --> 00:02:53,510
+they both work the same except one is multi-device.
+
+66
+00:02:53,510 --> 00:02:56,100
+And personally I use Authy because I like the fact that
+
+67
+00:02:56,100 --> 00:02:58,660
+I can use it on my computer and on my phones.
+
+68
+00:02:58,660 --> 00:03:01,200
+So, for Authy you have support
+
+69
+00:03:01,200 --> 00:03:04,170
+for multiple tokens on a single device.
+
+70
+00:03:04,170 --> 00:03:06,740
+So, that means that with a Virtual MFA device,
+
+71
+00:03:06,740 --> 00:03:09,430
+you can have your root account, your IAM user,
+
+72
+00:03:09,430 --> 00:03:11,380
+and another account, and another IAM user,
+
+73
+00:03:11,380 --> 00:03:12,920
+its up to you, you can have as many users
+
+74
+00:03:12,920 --> 00:03:15,700
+and accounts as you want on your Virtual MFA device,
+
+75
+00:03:15,700 --> 00:03:19,060
+which make it a very easy solution to use.
+
+76
+00:03:19,060 --> 00:03:20,230
+Now we have another thing called
+
+77
+00:03:20,230 --> 00:03:24,050
+a Universal 2nd Factor or U2F Security Key,
+
+78
+00:03:24,050 --> 00:03:26,440
+and that is a physical device, for example,
+
+79
+00:03:26,440 --> 00:03:30,680
+a YubiKey by Yubico and Yubico is a 3rd party to AWS,
+
+80
+00:03:30,680 --> 00:03:33,590
+this is mot the AWS that provided, this is a 3rd party
+
+81
+00:03:33,590 --> 00:03:35,720
+and we use a physical device,
+
+82
+00:03:35,720 --> 00:03:38,680
+because maybe it's super easy, you put it your Key Fobs
+
+83
+00:03:38,680 --> 00:03:39,920
+and you're good to go.
+
+84
+00:03:39,920 --> 00:03:43,850
+So this YubiKey supports multiple root and IAM users
+
+85
+00:03:43,850 --> 00:03:46,400
+using a single security so you don't need as many keys
+
+86
+00:03:46,400 --> 00:03:48,990
+as users otherwise that will be a nightmare.
+
+87
+00:03:48,990 --> 00:03:50,470
+Then your other options,
+
+88
+00:03:50,470 --> 00:03:52,770
+you have a Hardware Key Fob MFA device
+
+89
+00:03:52,770 --> 00:03:54,560
+for example this one provided by Gemalto
+
+90
+00:03:54,560 --> 00:03:57,073
+which is also a third party to AWS
+
+91
+00:03:57,950 --> 00:04:02,370
+and finally, if you are using the cloud of the government
+
+92
+00:04:02,370 --> 00:04:06,730
+in the US, the AWS GovCloud then you have a special Key Fob,
+
+93
+00:04:06,730 --> 00:04:09,150
+that looks like this, that is provided by SurePassID
+
+94
+00:04:09,150 --> 00:04:11,230
+which is also a 3rd party.
+
+95
+00:04:11,230 --> 00:04:12,840
+So that's it, we've seen the theory
+
+96
+00:04:12,840 --> 00:04:14,330
+on how to protect your account,
+
+97
+00:04:14,330 --> 00:04:16,400
+but let's go to the next lecture to implement that.
+
+98
+00:04:16,400 --> 00:04:18,300
+So I will see you in the next lecture.

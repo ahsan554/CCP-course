@@ -1,0 +1,368 @@
+1
+00:00:00,300 --> 00:00:02,880
+<v Instructor>So let me show you how to create access keys.</v>
+
+2
+00:00:02,880 --> 00:00:05,460
+So I'm gonna CLIck on my username, Stephane,
+
+3
+00:00:05,460 --> 00:00:07,980
+and I'm gonna go under Security credentials.
+
+4
+00:00:07,980 --> 00:00:11,760
+I will scroll down and I will create an access key.
+
+5
+00:00:11,760 --> 00:00:15,150
+As you can see, there are some selection you need to do
+
+6
+00:00:15,150 --> 00:00:17,460
+and based on the selection I'm doing, for example,
+
+7
+00:00:17,460 --> 00:00:19,317
+I want access key for the CLI,
+
+8
+00:00:19,317 --> 00:00:21,840
+AWS is going to have an alternative recommended.
+
+9
+00:00:21,840 --> 00:00:24,960
+For example, for the CLI, it's better to use CloudShell,
+
+10
+00:00:24,960 --> 00:00:26,520
+which I will show you in the next lecture.
+
+11
+00:00:26,520 --> 00:00:27,720
+So don't worry about it.
+
+12
+00:00:27,720 --> 00:00:30,840
+Or to use the CLI V2 and an authentication
+
+13
+00:00:30,840 --> 00:00:33,510
+through the IAM Identity Center, which I will not show you
+
+14
+00:00:33,510 --> 00:00:35,550
+because it's a bit more complicated.
+
+15
+00:00:35,550 --> 00:00:37,080
+So based on what you wanna do,
+
+16
+00:00:37,080 --> 00:00:39,120
+if it's local code, application running outside
+
+17
+00:00:39,120 --> 00:00:41,580
+of AWS or in AWS and so on,
+
+18
+00:00:41,580 --> 00:00:43,740
+you will have some recommendation in the bottom.
+
+19
+00:00:43,740 --> 00:00:45,420
+For now, we're going to use the CLI
+
+20
+00:00:45,420 --> 00:00:47,520
+and we'll use these access keys
+
+21
+00:00:47,520 --> 00:00:48,900
+and we'll click here to say
+
+22
+00:00:48,900 --> 00:00:51,120
+I understand the above recommendation
+
+23
+00:00:51,120 --> 00:00:52,920
+and I still want to create an access key
+
+24
+00:00:52,920 --> 00:00:56,520
+because it is important for you to understand how they are,
+
+25
+00:00:56,520 --> 00:00:58,890
+how they work, what they are, and so on.
+
+26
+00:00:58,890 --> 00:01:01,200
+So let's create this access key
+
+27
+00:01:01,200 --> 00:01:04,200
+and now this is the only time you'll be able to have access
+
+28
+00:01:04,200 --> 00:01:07,230
+to the access key and the secret access key.
+
+29
+00:01:07,230 --> 00:01:10,140
+So I will go back now to a previous version
+
+30
+00:01:10,140 --> 00:01:13,080
+of that lecture where you see the old UI, but don't worry,
+
+31
+00:01:13,080 --> 00:01:15,120
+nothing changes from that point on.
+
+32
+00:01:15,120 --> 00:01:18,690
+The first thing I have to do is to configure my AWS CLI.
+
+33
+00:01:18,690 --> 00:01:21,120
+So I'm going to type aws configure,
+
+34
+00:01:21,120 --> 00:01:24,390
+and then I am greeted with entering my access key ID.
+
+35
+00:01:24,390 --> 00:01:27,990
+Very nice. I can just enter this one and press Enter.
+
+36
+00:01:27,990 --> 00:01:30,900
+And then I'm greeted with entering my secret access key,
+
+37
+00:01:30,900 --> 00:01:33,330
+which I will enter right here as well.
+
+38
+00:01:33,330 --> 00:01:34,320
+The default region name.
+
+39
+00:01:34,320 --> 00:01:36,420
+So this is a region that is close to you.
+
+40
+00:01:36,420 --> 00:01:37,830
+I will choose eu-west-1
+
+41
+00:01:37,830 --> 00:01:40,440
+because I will be doing all my tutorials in eu-west-1
+
+42
+00:01:40,440 --> 00:01:41,820
+but you will choose your own region
+
+43
+00:01:41,820 --> 00:01:43,688
+and you can enter your own region name.
+
+44
+00:01:43,688 --> 00:01:45,060
+The region name, by the way,
+
+45
+00:01:45,060 --> 00:01:48,630
+you can get directly from this dropdown right here.
+
+46
+00:01:48,630 --> 00:01:50,460
+It shows you the name of the region,
+
+47
+00:01:50,460 --> 00:01:51,990
+as well as the region code.
+
+48
+00:01:51,990 --> 00:01:54,780
+So for me, I'm going to use my eu-west-1.
+
+49
+00:01:54,780 --> 00:01:57,450
+I'll press Enter and then the default output format.
+
+50
+00:01:57,450 --> 00:01:59,220
+I'll just press Enter as well.
+
+51
+00:01:59,220 --> 00:02:02,670
+So now my AWS CLI is configured
+
+52
+00:02:02,670 --> 00:02:04,950
+and so we can have a look at how it works.
+
+53
+00:02:04,950 --> 00:02:09,950
+We can do aws iam list-users and press Enter.
+
+54
+00:02:10,830 --> 00:02:13,980
+And this will list all the users in my accounts.
+
+55
+00:02:13,980 --> 00:02:15,120
+And as we can see,
+
+56
+00:02:15,120 --> 00:02:17,250
+the user I have right now is called Stephane.
+
+57
+00:02:17,250 --> 00:02:20,490
+Here is the user ID, here is the ARN, when it was created
+
+58
+00:02:20,490 --> 00:02:22,530
+and when the password was last used,
+
+59
+00:02:22,530 --> 00:02:24,810
+which is very similar to what I would get
+
+60
+00:02:24,810 --> 00:02:28,020
+if I were to go into this UI right here.
+
+61
+00:02:28,020 --> 00:02:31,350
+So the management console and the CLI do provide
+
+62
+00:02:31,350 --> 00:02:33,243
+similar kind of information.
+
+63
+00:02:34,710 --> 00:02:36,240
+Next, I want to show you what happens
+
+64
+00:02:36,240 --> 00:02:38,790
+if we remove permissions from our users.
+
+65
+00:02:38,790 --> 00:02:40,470
+So I'm gonna go to admins
+
+66
+00:02:40,470 --> 00:02:42,450
+and I'm going to remove the Stephane user
+
+67
+00:02:42,450 --> 00:02:43,710
+from the group admin.
+
+68
+00:02:43,710 --> 00:02:47,580
+And so again, if I go back to my user Stephane,
+
+69
+00:02:47,580 --> 00:02:48,960
+it doesn't have any permissions.
+
+70
+00:02:48,960 --> 00:02:50,220
+And I did this obviously
+
+71
+00:02:50,220 --> 00:02:53,040
+with my root accounts, not the other accounts.
+
+72
+00:02:53,040 --> 00:02:57,690
+So now if I go into my UI and obviously refresh this page,
+
+73
+00:02:57,690 --> 00:02:59,670
+I'm going to get an error saying that yes,
+
+74
+00:02:59,670 --> 00:03:02,010
+I do not have the permissions to do this
+
+75
+00:03:02,010 --> 00:03:04,050
+but let's try to do the same thing with the CLI.
+
+76
+00:03:04,050 --> 00:03:07,980
+So we're going to do an iam list-users call
+
+77
+00:03:07,980 --> 00:03:12,090
+and we get no response because actually it was being denied.
+
+78
+00:03:12,090 --> 00:03:14,910
+So the CLI permissions are obviously going
+
+79
+00:03:14,910 --> 00:03:16,410
+to be the exact same
+
+80
+00:03:16,410 --> 00:03:19,290
+as the permissions you get from the IAM console.
+
+81
+00:03:19,290 --> 00:03:20,790
+So the takeaway from this lecture
+
+82
+00:03:20,790 --> 00:03:24,510
+is that you can access AWS using the management console
+
+83
+00:03:24,510 --> 00:03:27,450
+or using access key and secret access key
+
+84
+00:03:27,450 --> 00:03:30,570
+that you can configure and then use into the CLI.
+
+85
+00:03:30,570 --> 00:03:33,090
+So hope you liked it and I will see you in the next lecture.
+
+86
+00:03:33,090 --> 00:03:37,140
+And obviously, do not forget to add your user back
+
+87
+00:03:37,140 --> 00:03:38,700
+into the group,
+
+88
+00:03:38,700 --> 00:03:40,290
+otherwise that would be horrible.
+
+89
+00:03:40,290 --> 00:03:42,930
+So I'm gonna go into groups, admins
+
+90
+00:03:42,930 --> 00:03:45,930
+and I'm going to add my Stephane user back into my group.
+
+91
+00:03:45,930 --> 00:03:48,090
+And now I am an administrator again.
+
+92
+00:03:48,090 --> 00:03:50,540
+So that's it. I will see you in the next lecture.
+

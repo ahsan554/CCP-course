@@ -1,0 +1,600 @@
+1
+00:00:00,500 --> 00:00:03,280
+<v Instructor>Okay, so let's play with IAM policies.</v>
+
+2
+00:00:03,280 --> 00:00:06,683
+So if we go into my user groups right now,
+
+3
+00:00:09,650 --> 00:00:12,410
+I can see that my group admin contains,
+
+4
+00:00:12,410 --> 00:00:14,140
+and this UI is a bit bugged,
+
+5
+00:00:14,140 --> 00:00:16,110
+contains one user, Stephane.
+
+6
+00:00:16,110 --> 00:00:19,180
+So if I go on the right hand side and go to my services
+
+7
+00:00:19,180 --> 00:00:22,863
+and I go to IAM, so I'll go to the IAM service.
+
+8
+00:00:23,900 --> 00:00:24,760
+I will show you one thing.
+
+9
+00:00:24,760 --> 00:00:26,990
+So, this user is an admin user.
+
+10
+00:00:26,990 --> 00:00:29,320
+And therefore, if you go to, for example, users,
+
+11
+00:00:29,320 --> 00:00:30,640
+you can see all the users.
+
+12
+00:00:30,640 --> 00:00:31,640
+Okay, great.
+
+13
+00:00:31,640 --> 00:00:33,220
+So, now what I'm going to do is I'm going
+
+14
+00:00:33,220 --> 00:00:36,504
+to remove Stephane from the admin groups.
+
+15
+00:00:36,504 --> 00:00:37,411
+I'm going to remove this user
+
+16
+00:00:37,411 --> 00:00:40,632
+and the user will lose the group permissions, that's true.
+
+17
+00:00:40,632 --> 00:00:43,010
+So the user has been removed from the group
+
+18
+00:00:43,010 --> 00:00:45,430
+and how do we make sure that this is applied?
+
+19
+00:00:45,430 --> 00:00:46,810
+Well, if I go on the right-hand side
+
+20
+00:00:46,810 --> 00:00:50,500
+and now refresh this page, as you can see,
+
+21
+00:00:50,500 --> 00:00:53,140
+I need permissions to access this page
+
+22
+00:00:53,140 --> 00:00:55,460
+and my user Stephane is not authorized
+
+23
+00:00:55,460 --> 00:00:59,400
+to perform IamListUsers on this page.
+
+24
+00:00:59,400 --> 00:01:00,233
+So that makes sense, right?
+
+25
+00:01:00,233 --> 00:01:03,310
+Because we removed the user Stephane from the admins group.
+
+26
+00:01:03,310 --> 00:01:05,480
+So, what I can do is I can fix this
+
+27
+00:01:05,480 --> 00:01:07,853
+and to fix it, I can go into my users.
+
+28
+00:01:09,910 --> 00:01:12,540
+Go to Stephane and now I can attach permissions
+
+29
+00:01:12,540 --> 00:01:14,380
+directly to my Stefane user.
+
+30
+00:01:14,380 --> 00:01:17,760
+So two ways of doing so, number one is to add permissions
+
+31
+00:01:17,760 --> 00:01:21,030
+and use policies that already exists or that you created
+
+32
+00:01:21,030 --> 00:01:23,240
+or add an inline policy to just add policies
+
+33
+00:01:23,240 --> 00:01:25,040
+directly to the user.
+
+34
+00:01:25,040 --> 00:01:27,060
+So, I'm going to add permissions
+
+35
+00:01:27,060 --> 00:01:29,860
+and I'm going to attach existing policies directly
+
+36
+00:01:29,860 --> 00:01:31,750
+and I will search for IAM.
+
+37
+00:01:31,750 --> 00:01:34,910
+And I'm going to look for IAM read-only access.
+
+38
+00:01:34,910 --> 00:01:37,690
+I review, I add these permissions
+
+39
+00:01:37,690 --> 00:01:41,000
+and now my user Stephane has IAM read only access.
+
+40
+00:01:41,000 --> 00:01:42,040
+What does that mean?
+
+41
+00:01:42,040 --> 00:01:45,020
+That means that, for example, if I refresh this page...
+
+42
+00:01:47,340 --> 00:01:50,480
+Then, as we can see, the user Stephane does exist.
+
+43
+00:01:50,480 --> 00:01:52,510
+But, for example, if I go to groups
+
+44
+00:01:53,960 --> 00:01:58,534
+and I try to create a group and call it "developers"
+
+45
+00:01:58,534 --> 00:02:00,440
+and create this group,
+
+46
+00:02:00,440 --> 00:02:01,920
+I'm going to get an exception
+
+47
+00:02:01,920 --> 00:02:04,220
+because I'm not authorized to do create group,
+
+48
+00:02:04,220 --> 00:02:08,250
+I was only authorized to have read-only access to IAM.
+
+49
+00:02:08,250 --> 00:02:11,560
+So this really shows the power of IAM and so on.
+
+50
+00:02:11,560 --> 00:02:15,473
+So, now if I go to my user groups, I can do two things.
+
+51
+00:02:15,473 --> 00:02:17,060
+So number one, I can go
+
+52
+00:02:17,060 --> 00:02:19,470
+into the admin group and I'm going to add back
+
+53
+00:02:19,470 --> 00:02:22,880
+this Stephane user so that we have administrator access.
+
+54
+00:02:22,880 --> 00:02:24,640
+The second thing I'm going to do is I'm going to
+
+55
+00:02:24,640 --> 00:02:27,131
+create a group named "developers".
+
+56
+00:02:27,131 --> 00:02:31,060
+And I'm also going to add Stephane into this group
+
+57
+00:02:31,060 --> 00:02:33,270
+and I'm going to attach a policy,
+
+58
+00:02:33,270 --> 00:02:34,930
+whatever the first policy I found
+
+59
+00:02:34,930 --> 00:02:36,742
+it was direct connect to read only access
+
+60
+00:02:36,742 --> 00:02:38,480
+and then create this group.
+
+61
+00:02:38,480 --> 00:02:40,070
+It doesn't matter which policy you're attached to,
+
+62
+00:02:40,070 --> 00:02:42,060
+I just want to show you a behavior.
+
+63
+00:02:42,060 --> 00:02:43,150
+Okay so, now we have two groups,
+
+64
+00:02:43,150 --> 00:02:45,130
+we have the admins and the developers,
+
+65
+00:02:45,130 --> 00:02:48,600
+and the user Stephane is in both groups.
+
+66
+00:02:48,600 --> 00:02:49,790
+So what's going to happen is
+
+67
+00:02:49,790 --> 00:02:51,960
+that if I click on the user Stephane
+
+68
+00:02:51,960 --> 00:02:55,650
+and look at the policies it has, it has three policies.
+
+69
+00:02:55,650 --> 00:02:59,890
+One that was attached directly named IAM ReadOnlyAccess.
+
+70
+00:02:59,890 --> 00:03:01,940
+One that was in two that were in Attached From Groups.
+
+71
+00:03:01,940 --> 00:03:05,490
+The first one is administrator access from the group admin.
+
+72
+00:03:05,490 --> 00:03:08,350
+And this one, it was direct connect read only access.
+
+73
+00:03:08,350 --> 00:03:09,930
+from the group's developers.
+
+74
+00:03:09,930 --> 00:03:12,130
+So, as we can see, the policies get inherited
+
+75
+00:03:12,130 --> 00:03:15,563
+in different ways through the IAM permissions.
+
+76
+00:03:16,920 --> 00:03:19,530
+So finally, I want to show you how policies work.
+
+77
+00:03:19,530 --> 00:03:20,919
+So if you go to policies,
+
+78
+00:03:20,919 --> 00:03:23,560
+we have a list of all the policies available
+
+79
+00:03:23,560 --> 00:03:26,040
+within AWS right here, their managed policy.
+
+80
+00:03:26,040 --> 00:03:27,850
+So this one is administrator access
+
+81
+00:03:27,850 --> 00:03:29,440
+and we've been using it before.
+
+82
+00:03:29,440 --> 00:03:32,540
+And if you look at the policy, JSON forum, as we can see
+
+83
+00:03:32,540 --> 00:03:35,130
+we have a version and we have a statement
+
+84
+00:03:35,130 --> 00:03:37,330
+that statement contains one statements
+
+85
+00:03:37,330 --> 00:03:38,980
+and the effect is allowed.
+
+86
+00:03:38,980 --> 00:03:41,120
+So to authorize action is "*",
+
+87
+00:03:41,120 --> 00:03:43,600
+that means any action resource is "*",
+
+88
+00:03:43,600 --> 00:03:45,160
+that means any resource.
+
+89
+00:03:45,160 --> 00:03:48,590
+So we allow all the actions on all the resources
+
+90
+00:03:48,590 --> 00:03:53,090
+therefore making this policy an administrator access policy.
+
+91
+00:03:53,090 --> 00:03:55,300
+We can go into policy summary as well
+
+92
+00:03:55,300 --> 00:03:57,100
+and this is another view of the policy.
+
+93
+00:03:57,100 --> 00:04:01,330
+We have allow on 284 services of 284.
+
+94
+00:04:01,330 --> 00:04:03,230
+Now services get added all the time,
+
+95
+00:04:03,230 --> 00:04:04,580
+so if you don't have the same number,
+
+96
+00:04:04,580 --> 00:04:07,190
+don't worry, the course is up to date.
+
+97
+00:04:07,190 --> 00:04:09,550
+So we can have a look at another policy.
+
+98
+00:04:09,550 --> 00:04:11,930
+For example, the IAM read only policy
+
+99
+00:04:11,930 --> 00:04:13,970
+that we've dealt with from before.
+
+100
+00:04:13,970 --> 00:04:17,230
+So, this time allows one service out of 284,
+
+101
+00:04:17,230 --> 00:04:18,220
+which is IAM.
+
+102
+00:04:18,220 --> 00:04:20,220
+And if we look at the JSON documents,
+
+103
+00:04:20,220 --> 00:04:22,890
+we can see all the actions that are authorized
+
+104
+00:04:22,890 --> 00:04:25,050
+by this IAM read only access.
+
+105
+00:04:25,050 --> 00:04:26,700
+So we get, for example, iam:get*,
+
+106
+00:04:26,700 --> 00:04:29,520
+the star GenerateCredentialsReport,
+
+107
+00:04:29,520 --> 00:04:31,850
+and so on, on the resource start.
+
+108
+00:04:31,850 --> 00:04:34,190
+There's also a way for you to create your own policy.
+
+109
+00:04:34,190 --> 00:04:36,937
+So you can go back to your policies and create a policy
+
+110
+00:04:36,937 --> 00:04:38,550
+and you have two ways of doing it.
+
+111
+00:04:38,550 --> 00:04:41,480
+Either, you want to write plain and simple JSON
+
+112
+00:04:41,480 --> 00:04:43,350
+or you can use the visual editor,
+
+113
+00:04:43,350 --> 00:04:44,183
+and this is quite handy.
+
+114
+00:04:44,183 --> 00:04:46,579
+For example, we can choose the service IAM,,
+
+115
+00:04:46,579 --> 00:04:48,370
+then we can choose an action.
+
+116
+00:04:48,370 --> 00:04:51,550
+And we can, for example, do a list user,
+
+117
+00:04:51,550 --> 00:04:53,600
+so I can filter for list users
+
+118
+00:04:53,600 --> 00:04:57,600
+for effects and I can do get user.
+
+119
+00:04:57,600 --> 00:05:00,860
+So, let's say we want to add these two actions
+
+120
+00:05:00,860 --> 00:05:04,050
+and on the resources we can specify specific resources
+
+121
+00:05:04,050 --> 00:05:05,740
+or all resources.
+
+122
+00:05:05,740 --> 00:05:09,260
+We could also specify a request condition if we wanted to.
+
+123
+00:05:09,260 --> 00:05:10,110
+So, once we've done that
+
+124
+00:05:10,110 --> 00:05:11,470
+if we go to the JSON documents
+
+125
+00:05:11,470 --> 00:05:15,444
+as we can see the visual editor SID was added,
+
+126
+00:05:15,444 --> 00:05:17,279
+which has the statement ID,
+
+127
+00:05:17,279 --> 00:05:19,440
+and we have two actions that were added.
+
+128
+00:05:19,440 --> 00:05:22,160
+So IAM list users and get users on resource start.
+
+129
+00:05:22,160 --> 00:05:24,350
+So it's quite a handy way to generate JSON directly
+
+130
+00:05:24,350 --> 00:05:25,543
+from the visual editor.
+
+131
+00:05:26,770 --> 00:05:28,640
+Okay. So, just to finish this lecture,
+
+132
+00:05:28,640 --> 00:05:30,610
+let's do a few things.
+
+133
+00:05:30,610 --> 00:05:33,390
+In user groups, I'm going to delete the developers group
+
+134
+00:05:33,390 --> 00:05:34,223
+cause I don't need it
+
+135
+00:05:34,223 --> 00:05:35,370
+and I need you to type the name of the group,
+
+136
+00:05:35,370 --> 00:05:39,300
+so I will type developers and click on deletes.
+
+137
+00:05:39,300 --> 00:05:41,730
+And also on my user as Stephane,
+
+138
+00:05:41,730 --> 00:05:44,410
+I'm going to remove the policy that was attached directly
+
+139
+00:05:44,410 --> 00:05:46,720
+because we don't need this IAM read only policy,
+
+140
+00:05:46,720 --> 00:05:49,840
+I will just remove it and we're good to go.
+
+141
+00:05:49,840 --> 00:05:52,840
+So, now my user Stephane has a full administrator access
+
+142
+00:05:52,840 --> 00:05:54,870
+because it is inherited from the admin group.
+
+143
+00:05:54,870 --> 00:05:58,360
+And so obviously if I go back to my IAM
+
+144
+00:05:58,360 --> 00:05:59,640
+also on the right side,
+
+145
+00:05:59,640 --> 00:06:02,170
+as we can see, everything is working just fine.
+
+146
+00:06:02,170 --> 00:06:04,150
+So I will refresh and here we go,
+
+147
+00:06:04,150 --> 00:06:05,068
+things are working.
+
+148
+00:06:05,068 --> 00:06:06,690
+So that's it for this lecture.
+
+149
+00:06:06,690 --> 00:06:07,523
+I hope you liked it
+
+150
+00:06:07,523 --> 00:06:09,370
+and I will see you in the next lecture.
+

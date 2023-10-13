@@ -1,0 +1,408 @@
+1
+00:00:00,150 --> 00:00:01,830
+<v Instructor>So we are going to first define</v>
+
+2
+00:00:01,830 --> 00:00:03,270
+a password policy.
+
+3
+00:00:03,270 --> 00:00:04,590
+For this click on Account Settings
+
+4
+00:00:04,590 --> 00:00:05,730
+on the left hand side.
+
+5
+00:00:05,730 --> 00:00:08,580
+You will find Password Policy and you can edit it.
+
+6
+00:00:08,580 --> 00:00:10,920
+So here we can use the IAM default password policy
+
+7
+00:00:10,920 --> 00:00:14,190
+which composes of these kind of requirements,
+
+8
+00:00:14,190 --> 00:00:16,980
+or we can customize the password policy
+
+9
+00:00:16,980 --> 00:00:19,170
+and force a password minimum length.
+
+10
+00:00:19,170 --> 00:00:21,150
+We can also require uppercase letter,
+
+11
+00:00:21,150 --> 00:00:25,380
+lowercase letter, a number, a non-alphanumeric character.
+
+12
+00:00:25,380 --> 00:00:27,180
+We can also turn on password expiration
+
+13
+00:00:27,180 --> 00:00:30,000
+to turn on, for example, expire after 90 days,
+
+14
+00:00:30,000 --> 00:00:32,160
+or that a password expiration
+
+15
+00:00:32,160 --> 00:00:33,750
+requires administrative resets,
+
+16
+00:00:33,750 --> 00:00:36,690
+or we can allow the users to change their own password,
+
+17
+00:00:36,690 --> 00:00:39,300
+or we can prevent password reuse.
+
+18
+00:00:39,300 --> 00:00:41,430
+So this password can be edited directly
+
+19
+00:00:41,430 --> 00:00:44,370
+from the IAM console, and that's the first part of security.
+
+20
+00:00:44,370 --> 00:00:45,420
+The second part is around
+
+21
+00:00:45,420 --> 00:00:48,000
+setting multi-factor authentication
+
+22
+00:00:48,000 --> 00:00:49,320
+for your root account.
+
+23
+00:00:49,320 --> 00:00:52,290
+So if you click on the account name
+
+24
+00:00:52,290 --> 00:00:55,050
+and then click on Security Credentials,
+
+25
+00:00:55,050 --> 00:00:57,930
+if you are logged in with the root user
+
+26
+00:00:57,930 --> 00:01:01,260
+you will see My Security Credentials, Root User.
+
+27
+00:01:01,260 --> 00:01:02,820
+You will not have access to this
+
+28
+00:01:02,820 --> 00:01:05,040
+if you're not logged in with a root user.
+
+29
+00:01:05,040 --> 00:01:06,690
+Now, there is a way for you
+
+30
+00:01:06,690 --> 00:01:08,670
+to actually protect your root user,
+
+31
+00:01:08,670 --> 00:01:13,470
+which is the most important account in your AWS accounts,
+
+32
+00:01:13,470 --> 00:01:17,010
+and you can protect it by using multi-factor authentication.
+
+33
+00:01:17,010 --> 00:01:19,020
+Now, just so you know, I'm going to do it
+
+34
+00:01:19,020 --> 00:01:21,120
+and demonstrate how it works in front of you,
+
+35
+00:01:21,120 --> 00:01:23,220
+but I've had students who locked themselves
+
+36
+00:01:23,220 --> 00:01:25,890
+out of their accounts because they lost access
+
+37
+00:01:25,890 --> 00:01:28,380
+to their multi-factor authentication device.
+
+38
+00:01:28,380 --> 00:01:31,350
+As such, if you think you are running the risk
+
+39
+00:01:31,350 --> 00:01:34,500
+of losing your iPhone or whatever, do not do this.
+
+40
+00:01:34,500 --> 00:01:37,560
+Just keep your phone with you, just watch my video.
+
+41
+00:01:37,560 --> 00:01:38,400
+It will be good enough.
+
+42
+00:01:38,400 --> 00:01:40,980
+If you want to practice along with me, you can as well.
+
+43
+00:01:40,980 --> 00:01:44,640
+And you can also delete the MFA device after activating it.
+
+44
+00:01:44,640 --> 00:01:48,180
+Okay, but let's go ahead and assign an MFA device.
+
+45
+00:01:48,180 --> 00:01:50,610
+So I will call this one my iPhone
+
+46
+00:01:50,610 --> 00:01:51,660
+because this is what I have,
+
+47
+00:01:51,660 --> 00:01:54,300
+but you can name it whatever you want.
+
+48
+00:01:54,300 --> 00:01:56,100
+Then you can select the type of MFA device.
+
+49
+00:01:56,100 --> 00:01:57,900
+So it could be an authenticator app,
+
+50
+00:01:57,900 --> 00:01:59,400
+which is something I'm going to use,
+
+51
+00:01:59,400 --> 00:02:01,230
+but also it can be a security key
+
+52
+00:02:01,230 --> 00:02:04,080
+or a hardware TOTP token.
+
+53
+00:02:04,080 --> 00:02:05,700
+So I'm going to use an authenticator app
+
+54
+00:02:05,700 --> 00:02:07,290
+because it will be virtual.
+
+55
+00:02:07,290 --> 00:02:10,050
+And now we go into the setup of the app.
+
+56
+00:02:10,050 --> 00:02:13,140
+So there's a list of compatible applications right here
+
+57
+00:02:13,140 --> 00:02:15,690
+that you can find here for Android and for iOS
+
+58
+00:02:15,690 --> 00:02:18,150
+that we know work well with AWS.
+
+59
+00:02:18,150 --> 00:02:22,110
+And as such I'm going to use the Twilio Authy Authenticator,
+
+60
+00:02:22,110 --> 00:02:23,460
+which is an app I like.
+
+61
+00:02:23,460 --> 00:02:24,900
+And that's something that can be used
+
+62
+00:02:24,900 --> 00:02:27,660
+on your computer, on your devices, so it's kind of nice.
+
+63
+00:02:27,660 --> 00:02:30,060
+So what I have to do then is actually
+
+64
+00:02:30,060 --> 00:02:31,860
+launch the app on my phone,
+
+65
+00:02:31,860 --> 00:02:34,290
+and then you click on Show QR Code.
+
+66
+00:02:34,290 --> 00:02:35,250
+So when you show the QR code
+
+67
+00:02:35,250 --> 00:02:38,340
+you need to scan this QR code directly on your phone.
+
+68
+00:02:38,340 --> 00:02:40,170
+So for this you add an account,
+
+69
+00:02:40,170 --> 00:02:43,050
+you scan the QR code right here,
+
+70
+00:02:43,050 --> 00:02:45,870
+and once scanned it will add the account
+
+71
+00:02:45,870 --> 00:02:47,190
+and start naming it.
+
+72
+00:02:47,190 --> 00:02:49,200
+So we'll just save this, this looks good.
+
+73
+00:02:49,200 --> 00:02:51,090
+And then we get access to MFA codes.
+
+74
+00:02:51,090 --> 00:02:55,440
+So there is the first MFA code,
+
+75
+00:02:55,440 --> 00:02:59,220
+so 301935.
+
+76
+00:02:59,220 --> 00:03:02,790
+So this is a code generated by my iPhone in real time.
+
+77
+00:03:02,790 --> 00:03:04,620
+And this code is going to change over time.
+
+78
+00:03:04,620 --> 00:03:07,410
+And the reason why the two codes are asked by AWS
+
+79
+00:03:07,410 --> 00:03:09,930
+is that it wants to make sure that the MFA device
+
+80
+00:03:09,930 --> 00:03:13,020
+is set up correctly, and that the codes are accurate.
+
+81
+00:03:13,020 --> 00:03:16,380
+So the second code is 792843.
+
+82
+00:03:16,380 --> 00:03:19,710
+And, of course, they will be different for your device.
+
+83
+00:03:19,710 --> 00:03:23,070
+And once these two codes are entered, you click on Add MFA.
+
+84
+00:03:23,070 --> 00:03:24,060
+And as you can see
+
+85
+00:03:24,060 --> 00:03:26,940
+we can register up to eight MFA devices currently.
+
+86
+00:03:26,940 --> 00:03:29,310
+And you can scroll down and see them right here on the list.
+
+87
+00:03:29,310 --> 00:03:32,550
+So the multi-factor authentication MFA 1
+
+88
+00:03:32,550 --> 00:03:34,680
+is called my iPhone that's been created right now.
+
+89
+00:03:34,680 --> 00:03:37,830
+So if you wanted to remove it, you can remove it, and so on.
+
+90
+00:03:37,830 --> 00:03:39,420
+But so how do you use MFA?
+
+91
+00:03:39,420 --> 00:03:43,800
+Well now if I log out of AWS and I log back in,
+
+92
+00:03:43,800 --> 00:03:46,803
+so I'm going to use my root account and my password.
+
+93
+00:03:48,480 --> 00:03:50,100
+Now after doing a successful login
+
+94
+00:03:50,100 --> 00:03:52,170
+I have the MFA code to enter.
+
+95
+00:03:52,170 --> 00:03:53,310
+And so I open my app
+
+96
+00:03:53,310 --> 00:03:57,720
+and enter the code that I see, and press Submit.
+
+97
+00:03:57,720 --> 00:04:00,090
+And this way I am logged in.
+
+98
+00:04:00,090 --> 00:04:01,380
+And this is perfect because well
+
+99
+00:04:01,380 --> 00:04:04,230
+we add an extra level of security on our account.
+
+100
+00:04:04,230 --> 00:04:05,670
+So that's it for this lecture.
+
+101
+00:04:05,670 --> 00:04:06,720
+I hope you liked it,
+
+102
+00:04:06,720 --> 00:04:08,703
+and I will see you in the next lecture.
+

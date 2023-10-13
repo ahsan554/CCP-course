@@ -1,0 +1,224 @@
+1
+00:00:00,210 --> 00:00:02,070
+<v Instructor>So on the left hand side of IAM,</v>
+
+2
+00:00:02,070 --> 00:00:03,460
+there are roles
+
+3
+00:00:03,460 --> 00:00:04,910
+and you may see zero roles.
+
+4
+00:00:04,910 --> 00:00:06,000
+Right now I have six,
+
+5
+00:00:06,000 --> 00:00:07,720
+it's because I use a different kind of account.
+
+6
+00:00:07,720 --> 00:00:08,850
+So don't worry about it.
+
+7
+00:00:08,850 --> 00:00:11,420
+Okay. It doesn't matter for this hands on, but we have roles
+
+8
+00:00:11,420 --> 00:00:15,010
+and roles allow entities in the AWS to get credentials
+
+9
+00:00:15,010 --> 00:00:18,290
+for a short duration and to do whatever they need to do.
+
+10
+00:00:18,290 --> 00:00:19,123
+So let's go ahead
+
+11
+00:00:19,123 --> 00:00:21,610
+and create our first role and we'll have the same thing.
+
+12
+00:00:21,610 --> 00:00:25,240
+So we are going to choose a trusted entity type.
+
+13
+00:00:25,240 --> 00:00:27,180
+And as we can see, we have different types.
+
+14
+00:00:27,180 --> 00:00:29,940
+So we can create roles for either services, if you will.
+
+15
+00:00:29,940 --> 00:00:32,210
+There are also accounts with identities, SAML Federation
+
+16
+00:00:32,210 --> 00:00:33,680
+custom trust policy.
+
+17
+00:00:33,680 --> 00:00:36,130
+All of these are out of scope for the exam.
+
+18
+00:00:36,130 --> 00:00:37,100
+The only thing we need to know
+
+19
+00:00:37,100 --> 00:00:38,900
+even for the hands on is just
+
+20
+00:00:38,900 --> 00:00:43,680
+that we can create role for AWS services and amongst them
+
+21
+00:00:43,680 --> 00:00:46,300
+the two most common use cases is to create a role
+
+22
+00:00:46,300 --> 00:00:50,250
+for an EC2 instance or for Lambda function.
+
+23
+00:00:50,250 --> 00:00:52,110
+But as you can see, you go here.
+
+24
+00:00:52,110 --> 00:00:54,530
+There are lots of AWS services
+
+25
+00:00:54,530 --> 00:00:56,290
+that can support having roles, okay.
+
+26
+00:00:56,290 --> 00:00:59,030
+And the roles are everywhere in AWS.
+
+27
+00:00:59,030 --> 00:01:00,570
+But to keep it simple right now
+
+28
+00:01:00,570 --> 00:01:02,230
+we are going to create a role,
+
+29
+00:01:02,230 --> 00:01:04,800
+an IAM role for the EC2 instances.
+
+30
+00:01:04,800 --> 00:01:06,670
+So let's click on next.
+
+31
+00:01:06,670 --> 00:01:10,970
+Okay. Next I'm going to have to assign policies
+
+32
+00:01:10,970 --> 00:01:12,730
+and permissions to that role.
+
+33
+00:01:12,730 --> 00:01:14,890
+So we will allow that role to do
+
+34
+00:01:14,890 --> 00:01:17,530
+IAM read only access.
+
+35
+00:01:17,530 --> 00:01:20,170
+This is going to allow my EC2 instance to read
+
+36
+00:01:20,170 --> 00:01:21,920
+from IAM.
+
+37
+00:01:21,920 --> 00:01:23,160
+We click on next?
+
+38
+00:01:23,160 --> 00:01:25,490
+And then we have to define a role name.
+
+39
+00:01:25,490 --> 00:01:27,730
+Okay. So you choose whatever you want for role name
+
+40
+00:01:27,730 --> 00:01:31,293
+for example, I will enter demo role for EC2.
+
+41
+00:01:33,470 --> 00:01:35,230
+And then we verify that, yes
+
+42
+00:01:35,230 --> 00:01:37,610
+we did have the IAM read only access
+
+43
+00:01:37,610 --> 00:01:38,680
+and we create this role.
+
+44
+00:01:38,680 --> 00:01:40,980
+So the role has now been created.
+
+45
+00:01:40,980 --> 00:01:42,302
+And if I click on it
+
+46
+00:01:42,302 --> 00:01:45,900
+we can verify that the permissions are applied correctly,
+
+47
+00:01:45,900 --> 00:01:47,780
+the IAM read only access.
+
+48
+00:01:47,780 --> 00:01:49,610
+And we are not going to use this role right now.
+
+49
+00:01:49,610 --> 00:01:50,730
+We will stop right here.
+
+50
+00:01:50,730 --> 00:01:53,110
+But when we get to the EC2 section of this course
+
+51
+00:01:53,110 --> 00:01:54,490
+we will be leveraging this role
+
+52
+00:01:54,490 --> 00:01:57,280
+allowing the EC2 instance to perform actions
+
+53
+00:01:57,280 --> 00:02:00,420
+against IAM and read data from IAM okay.
+
+54
+00:02:00,420 --> 00:02:01,410
+So that's it for this lecture.
+
+55
+00:02:01,410 --> 00:02:02,470
+I hope you liked it.
+
+56
+00:02:02,470 --> 00:02:04,420
+And I will see you in the next lecture.
+

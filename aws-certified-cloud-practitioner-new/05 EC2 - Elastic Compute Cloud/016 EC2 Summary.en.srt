@@ -1,0 +1,147 @@
+1
+00:00:00,000 --> 00:00:01,270
+<v Instructor>Let's do a summary</v>
+
+2
+00:00:01,270 --> 00:00:03,310
+on what we learned for EC2.
+
+3
+00:00:03,310 --> 00:00:05,490
+So we have created EC2 Instances,
+
+4
+00:00:05,490 --> 00:00:07,140
+and they were composed of an AMI,
+
+5
+00:00:07,140 --> 00:00:10,200
+which was defining the operating system.
+
+6
+00:00:10,200 --> 00:00:11,950
+Then we defined an instance size
+
+7
+00:00:11,950 --> 00:00:15,150
+where we defined how much CPU power we want,
+
+8
+00:00:15,150 --> 00:00:17,150
+and how much RAM we want.
+
+9
+00:00:17,150 --> 00:00:20,230
+We described the storage for our EC2 Instance,
+
+10
+00:00:20,230 --> 00:00:22,160
+We defined the firewall on our instances
+
+11
+00:00:22,160 --> 00:00:23,500
+with the security groups,
+
+12
+00:00:23,500 --> 00:00:27,610
+and finally, a bootstrap script called the EC2 User Data
+
+13
+00:00:27,610 --> 00:00:30,610
+that was started when the EC2 Instance was started.
+
+14
+00:00:30,610 --> 00:00:34,100
+So the security groups are attached to EC2 Instances.
+
+15
+00:00:34,100 --> 00:00:37,130
+And they are a firewall outside of your instance.
+
+16
+00:00:37,130 --> 00:00:39,340
+And you can define rules to allow which ports
+
+17
+00:00:39,340 --> 00:00:43,280
+and which API can access your EC2 instance.
+
+18
+00:00:43,280 --> 00:00:44,650
+For EC2 User Data,
+
+19
+00:00:44,650 --> 00:00:46,360
+this was a script that we launched
+
+20
+00:00:46,360 --> 00:00:48,380
+at the first start of an instance
+
+21
+00:00:48,380 --> 00:00:50,680
+that we used to set up our EC2 instance
+
+22
+00:00:50,680 --> 00:00:54,390
+to be a web server and say "hello world".
+
+23
+00:00:54,390 --> 00:00:57,540
+SSH was a way for us to start a terminal
+
+24
+00:00:57,540 --> 00:01:00,890
+from our computers into our EC2 Instances,
+
+25
+00:01:00,890 --> 00:01:03,670
+to start issuing commands on port 22.
+
+26
+00:01:03,670 --> 00:01:04,840
+And once we did it,
+
+27
+00:01:04,840 --> 00:01:07,113
+we were able to leverage an EC2 Instance role
+
+28
+00:01:07,113 --> 00:01:09,700
+that was similar to IAM role,
+
+29
+00:01:09,700 --> 00:01:14,060
+to have our EC2 instance issue commands against IAM.
+
+30
+00:01:14,060 --> 00:01:16,140
+In terms of the EC2 purchasing options,
+
+31
+00:01:16,140 --> 00:01:18,780
+we have multiple options you need to know for the exam.
+
+32
+00:01:18,780 --> 00:01:22,350
+We have On-demand, Spot, Reserved in three flavors
+
+33
+00:01:22,350 --> 00:01:24,620
+of Standard, Convertible and Scheduled.
+
+34
+00:01:24,620 --> 00:01:28,410
+We have Dedicated Host and finally Dedicated Instances.
+
+35
+00:01:28,410 --> 00:01:29,243
+So that's it.
+
+36
+00:01:29,243 --> 00:01:30,076
+I hope you liked it
+
+37
+00:01:30,076 --> 00:01:31,900
+and I will see you in the next section.
